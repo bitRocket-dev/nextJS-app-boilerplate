@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "format": "prettier --ignore-path .gitignore \"**/*.+(ts|js|tsx)\" --write",
+    "postinstall": "node ./bin/postInstall",
     "start": "next start",
     "lint": "next lint",
     "test:lint": "eslint --ext .ts,.tsx ./",
@@ -40,6 +41,16 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "prettier": "^2.8.6"
+    "prettier": "^2.8.6",
+    "@commitlint/cli": "17.5.0",
+    "@commitlint/config-conventional": "17.4.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0"
+  },
+  "lint-staged": {
+    "./src/**/*.{ts,js,jsx,tsx}": [
+      "yarn lint",
+      "yarn format"
+    ]
   }
 }
