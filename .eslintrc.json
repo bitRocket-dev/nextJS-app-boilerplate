@@ -10,21 +10,14 @@
     "ecmaVersion": 2019,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "react-hooks",
-    "jsx-a11y",
-    "prettier",
-    "@typescript-eslint/eslint-plugin"
-  ],
+  "plugins": ["react", "react-hooks", "jsx-a11y", "prettier", "@typescript-eslint/eslint-plugin"],
   "extends": [
     "plugin:react/recommended",
     "airbnb",
     "prettier",
     "plugin:@next/next/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
     "@next/next/no-duplicate-head": "error",
@@ -34,7 +27,49 @@
     "@typescript-eslint/default-param-last": "error",
     "@typescript-eslint/indent": "off",
     "@typescript-eslint/lines-between-class-members": "error",
-    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      //bollean with prefix "is", "should", "has", "can", "did", "will"
+      {
+        "selector": "variable",
+        "types": ["boolean"],
+        "format": ["PascalCase"],
+        "prefix": ["is", "should", "has", "can", "did", "will"]
+      },
+      //const only write in camelCase or UPPER_CASE
+      {
+        "selector": "variable",
+        "modifiers": ["const"],
+        "format": ["camelCase", "UPPER_CASE"]
+      },
+      {
+        //Enforce that type parameters (generics) are prefixed with
+        "selector": "typeParameter",
+        "format": ["PascalCase"],
+        "prefix": ["T"]
+      },
+      //Enforce that interface names do not begin with an I
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": false
+        }
+      },
+      //Enforce that variable and function names are in camelCase
+      {
+        "selector": ["variable"],
+        "format": ["camelCase"],
+        "leadingUnderscore": "allow"
+      },
+      //Ignore destructured names
+      {
+        "selector": "variable",
+        "modifiers": ["destructured"],
+        "format": null
+      }
+    ],
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/no-inferrable-types": "error",
