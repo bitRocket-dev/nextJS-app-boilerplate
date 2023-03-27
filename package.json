@@ -7,17 +7,13 @@
     "build": "next build",
     "format": "prettier --ignore-path .gitignore \"**/*.+(ts|js|tsx)\" --write",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:lint": "eslint --ext .ts,.tsx ./",
+    "test:type": "tsc --noEmit"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
-    "@types/node": "18.15.5",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.11",
     "axios": "^1.3.4",
-    "eslint": "8.36.0",
-    "eslint-config-next": "13.2.4",
-    "eslint-config-prettier": "^8.8.0",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -25,6 +21,25 @@
     "typescript": "5.0.2"
   },
   "devDependencies": {
-    "prettier": "2.8.6"
+    "@next/eslint-plugin-next": "^13.2.4",
+    "@typescript-eslint/eslint-plugin": "5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
+    "@types/node": "18.15.5",
+    "@types/react": "18.0.28",
+    "@types/react-csv": "^1.1.3",
+    "@types/react-dom": "18.0.11",
+    "@types/react-spinkit": "^3.0.7",
+    "eslint": "8.36.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-typescript": "2.5.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-config-next": "13.2.4",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.8.6"
   }
 }
