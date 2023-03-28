@@ -1,6 +1,6 @@
 {
   "name": "nextjs-boilerplate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "next lint",
     "test:lint": "eslint --ext .ts,.tsx ./",
-    "test:type": "tsc --noEmit"
+    "test:type": "tsc --noEmit",
+    "generate:release": "standard-version"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
@@ -45,7 +46,9 @@
     "@commitlint/cli": "17.5.0",
     "@commitlint/config-conventional": "17.4.4",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.0"
+    "lint-staged": "^13.2.0",
+    "standard-version": "^9.5.0"
+
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
