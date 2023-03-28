@@ -1,6 +1,8 @@
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+/** @format */
 
-import { TDispatch, TStore } from "./createStore";
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+
+import { TDispatch, TStore } from './createStore';
 
 export const useAppDispatch = () => useDispatch<TDispatch>();
 

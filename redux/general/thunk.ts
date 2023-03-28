@@ -1,15 +1,14 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+/** @format */
 
-import { AxiosClient } from "../../utils/createAxiosClient";
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export const thunkGeneral = createAsyncThunk<{}, {}>(
-  "GENERAL",
-  async (payload, thunkAPI) => {
-    try {
-      await AxiosClient().get("....");
-      return payload;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error);
-    }
+import { AxiosClient } from '../../common/utils/createAxiosClient';
+
+export const thunkGeneral = createAsyncThunk<unknown, unknown>('GENERAL', async (payload, thunkAPI) => {
+  try {
+    await AxiosClient().get('....');
+    return payload;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error);
   }
-);
+});
