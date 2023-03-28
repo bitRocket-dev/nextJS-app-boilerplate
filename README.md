@@ -1,4 +1,12 @@
 
+# Index
+
+- [Naming Convention](@docs/NAMING_CONVENTION.md)
+- [Git Flow](@docs/GIT_FLOW.md)
+
+### Tools used
+
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 
 ## Getting Started
 
