@@ -10,6 +10,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 // eslint-disable-next-line import/no-unresolved
 import styles from '@/styles/Home.module.css';
+import React from 'react';
 
 export async function getStaticProps({ locale }: NextPageContext) {
   if (!locale) {
@@ -42,6 +43,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Link href="/about">About</Link>
       <main className={styles.main}>
         <div className={styles.description}>
           <h1>

@@ -158,7 +158,16 @@
         "plugin:testing-library/react",
         "plugin:jest-dom/recommended"
       ]
-    }
+    },
+        // Configuration for e2e testing (Cypress)
+        {
+          "files": ["cypress/**/*.ts"],
+          "plugins": ["cypress"],
+          "extends": ["plugin:cypress/recommended"],
+          "parserOptions": {
+            "project": "./cypress/tsconfig.json"
+          }
+        }
   ],
   "settings": {
     "import/parsers": {
@@ -168,4 +177,5 @@
       "typescript": {}
     }
   }
+
 }
