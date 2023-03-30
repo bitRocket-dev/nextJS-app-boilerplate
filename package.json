@@ -11,7 +11,8 @@
     "lint": "next lint",
     "test:lint": "eslint --ext .ts,.tsx ./",
     "test:type": "tsc --noEmit",
-    "generate:release": "standard-version"
+    "generate:release": "standard-version",
+    "patch": "patch-package"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
@@ -50,8 +51,8 @@
     "@commitlint/config-conventional": "17.4.4",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
-    "standard-version": "^9.5.0"
-
+    "standard-version": "^9.5.0",
+    "patch-package": "^6.5.1"
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
