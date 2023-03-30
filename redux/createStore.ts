@@ -1,6 +1,7 @@
 /** @format */
 
 import { configureStore } from '@reduxjs/toolkit';
+
 import { sliceGeneral } from './general/slice';
 
 export const createStore = () => {

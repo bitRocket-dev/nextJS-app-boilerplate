@@ -1,5 +1,7 @@
 /** @format */
 
+import React from 'react';
+
 import { NextPageContext } from 'next';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
@@ -9,9 +11,7 @@ import { i18n, useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextSeo } from 'next-seo';
 
-// eslint-disable-next-line import/no-unresolved
-import styles from '@/styles/Home.module.css';
-import React from 'react';
+import styles from '../styles/Home.module.css';
 
 export async function getStaticProps({ locale }: NextPageContext) {
   if (!locale) {
@@ -70,6 +70,10 @@ export default function Home() {
           }}
         />
       </Head>
+      <h1>{t('title')}</h1>
+      <Link href={`/${t('developers')}`} locale={i18n?.language}>
+        {t('developers')}
+      </Link>
       <Link href="/about">About</Link>
       <main className={styles.main}>
         <div className={styles.description}>
