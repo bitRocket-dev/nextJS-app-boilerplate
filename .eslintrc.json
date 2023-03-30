@@ -70,6 +70,14 @@
         "format": null
       }
     ],
+    "@typescript-eslint/consistent-type-imports": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/no-confusing-void-expression": "off",
+    "@typescript-eslint/triple-slash-reference": "off",
+    "no-param-reassign": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/no-inferrable-types": "error",
@@ -88,8 +96,8 @@
     "import/no-duplicates": "error",
     "import/no-extraneous-dependencies": "error",
     "import/no-named-as-default-member": "error",
-    "import/no-unresolved": "error",
-    "import/no-unused-modules": "error",
+    "import/no-unresolved": [2, { "caseSensitiveStrict": false }],
+    "import/no-unused-modules": "off",
     "import/prefer-default-export": "off",
     "no-alert": "error",
     "no-async-promise-executor": "error",
@@ -151,5 +159,13 @@
         "plugin:jest-dom/recommended"
       ]
     }
-  ]
+  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
 }

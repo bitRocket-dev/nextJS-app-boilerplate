@@ -8,12 +8,10 @@
     "format": "prettier --ignore-path .gitignore \"**/*.+(ts|js|tsx)\" --write",
     "postinstall": "node ./bin/postInstall",
     "start": "next start",
-    "lint": "next lint",
-    "test:lint": "eslint --ext .ts,.tsx ./",
-    "test:type": "tsc --noEmit",
     "generate:release": "standard-version",
     "patch": "patch-package",
-    "test": "jest"
+    "test": "jest",
+    "lint": "tsc --project  ./tsconfig.json --noEmit && eslint  --ext=jsx,ts,tsx,js,css,scss && next lint"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
@@ -28,6 +26,8 @@
     "typescript": "5.0.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "17.5.0",
+    "@commitlint/config-conventional": "17.4.4",
     "@next/eslint-plugin-next": "^13.2.4",
     "@types/node": "18.15.5",
     "@types/react": "18.0.28",
@@ -43,7 +43,7 @@
     "eslint-config-next": "13.2.4",
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "2.5.0",
-    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
@@ -52,8 +52,6 @@
     "eslint-plugin-jest-dom": "^4.0.3",
     "eslint-plugin-jest-formatting": "^3.1.0",
     "prettier": "^2.8.6",
-    "@commitlint/cli": "17.5.0",
-    "@commitlint/config-conventional": "17.4.4",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "standard-version": "^9.5.0",
@@ -68,6 +66,7 @@
       "yarn lint",
       "yarn format"
     ]
+
 
   }
 }

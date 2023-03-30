@@ -1,7 +1,8 @@
 /** @format */
 
-import { createSlice } from "@reduxjs/toolkit";
-import { thunkGeneral } from "./thunk";
+import { createSlice } from '@reduxjs/toolkit';
+
+import { thunkGeneral } from './thunk';
 
 interface State {
   isLoading?: true;
@@ -9,18 +10,18 @@ interface State {
 }
 
 export const sliceGeneral = createSlice<State, {}>({
-  name: "general",
+  name: 'general',
   initialState: {},
   reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(thunkGeneral.pending, (state) => {
+  extraReducers: builder => {
+    builder.addCase(thunkGeneral.pending, state => {
       state.isLoading = true;
     });
-    builder.addCase(thunkGeneral.rejected, (state) => {
+    builder.addCase(thunkGeneral.rejected, state => {
       delete state.isLoading;
     });
-    builder.addCase(thunkGeneral.fulfilled, (state) => {
-      state.text = "test";
+    builder.addCase(thunkGeneral.fulfilled, state => {
+      state.text = 'test';
     });
   },
 });

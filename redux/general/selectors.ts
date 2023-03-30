@@ -1,6 +1,7 @@
-import { TStore } from "../createStore";
+/** @format */
 
-export const selectorIsLoading = (store: TStore) =>
-  store.general.isLoading || false;
+import { TStore } from '../createStore';
 
-export const selectorText = (store: TStore) => store.general.text || "";
+export const selectorIsLoading = (store: TStore) => store.general.isLoading || false;
+
+export const selectorText = (store: TStore) => store.general.text || '';
