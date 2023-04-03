@@ -73,7 +73,7 @@ export default function Home() {
       <Link style={{ marginRight: '20px' }} href={`/${t('developers')}`} locale={i18n?.language}>
         {t('developers')}
       </Link>
-      <Link href="/about">About</Link>
+      <Link href="/about">{t('about')}</Link>
       <main className={styles.main}>
         <div className={styles.description}>
           <h1>

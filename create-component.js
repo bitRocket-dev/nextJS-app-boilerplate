@@ -34,9 +34,16 @@ function createComponent() {
         type: 'confirm',
         name: 'hasTest',
         message: 'Would you like to add this component to unit test?',
+        when: answers => answers.componentType === 'UI component' || answers.componentType === 'Shared component',
+      },
+      {
+        type: 'confirm',
+        name: 'hasStory',
+        message: 'Would you like to add this component to stories?',
+        when: answers => answers.componentType === 'UI component' || answers.componentType === 'Shared component',
       },
     ])
-    .then(({ componentName, componentType, hasTest }) => {
+    .then(({ componentName, componentType, hasTest, hasStory }) => {
       const componentTypeKey = Object.keys(COMPONENT_TYPES).find(key => COMPONENT_TYPES[key] === componentType);
       const dirPath = path.join(
         process.cwd(),
@@ -48,7 +55,7 @@ function createComponent() {
           ? 'common/utils'
           : 'common/hooks',
       );
-      const componentFilePath = path.join(dirPath, `${componentName}.tsx`);
+      const componentFilePath = path.join(dirPath, `${componentNameUpper}.tsx`);
 
       if (fs.existsSync(componentFilePath)) {
         console.error(`Component "${componentName}" already exists!`);
@@ -95,7 +102,7 @@ import styled from '@emotion/styled';
               /* Add your props here */
               }
                     
-              export const ${componentNameUpper} = memo(({ label }: Props) => {
+              export const ${componentNameUpper} = memo(({ label="default" }: Props) => {
                 const { t } = useTranslation('common');
                 return (
                   <Styled${componentNameUpper}Container>
@@ -132,7 +139,7 @@ import styled from '@emotion/styled';
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import { ${componentNameUpper} } from '../common/${componentTypeKey}/${componentName}';
+import { ${componentNameUpper} } from '../common/${componentTypeKey}/${componentNameUpper}';
         
         describe('${componentNameUpper}', () => {
           test('renders without errors', () => {
@@ -144,6 +151,21 @@ import { ${componentNameUpper} } from '../common/${componentTypeKey}/${component
             
 `;
         const componentFilePath = path.join('./_test_', `${componentName}.test.jsx`);
+        fs.writeFileSync(componentFilePath, componentContent);
+      }
+      if (hasStory) {
+        componentContent = `
+        import { ${componentNameUpper} } from '../common/${componentTypeKey}/${componentNameUpper}';
+
+        export default {
+          title: "Example/${componentName}",
+          component: ${componentNameUpper},
+        }
+
+        export const Component = () => <${componentNameUpper} />;
+        `;
+
+        const componentFilePath = path.join('./stories', `${componentNameUpper}.stories.tsx`);
         fs.writeFileSync(componentFilePath, componentContent);
       }
     });
