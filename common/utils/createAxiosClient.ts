@@ -2,8 +2,7 @@
 
 import Axios from 'axios';
 
-export const AxiosClient = () => {
-  return Axios.create({
+export const AxiosClient = () =>
+  Axios.create({
     headers: { Authorization: 'Bearer ----', apiKey: '' },
   });
-};

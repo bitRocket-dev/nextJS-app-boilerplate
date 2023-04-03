@@ -70,7 +70,6 @@ export default function Home() {
           }}
         />
       </Head>
-      <h1>{t('title')}</h1>
       <Link href={`/${t('developers')}`} locale={i18n?.language}>
         {t('developers')}
       </Link>

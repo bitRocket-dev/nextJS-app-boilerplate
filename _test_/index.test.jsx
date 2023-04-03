@@ -10,6 +10,6 @@ describe('Home', () => {
     //The render method is used to render (or mount) the Home component within a virtual testing environment.
     render(<Home />);
     //The debug method is used to display in the terminal the tree of DOM nodes that corresponds to the selected element, in this case the level 1 heading.
-    screen.debug(screen.getByRole('heading', { level: 1 }));
+    expect(screen.get('heading', { level: 1 })).toBeInTheDocument();
   });
 });
