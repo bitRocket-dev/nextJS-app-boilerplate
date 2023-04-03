@@ -70,7 +70,7 @@ export default function Home() {
           }}
         />
       </Head>
-      <Link href={`/${t('developers')}`} locale={i18n?.language}>
+      <Link style={{ marginRight: '20px' }} href={`/${t('developers')}`} locale={i18n?.language}>
         {t('developers')}
       </Link>
       <Link href="/about">About</Link>
