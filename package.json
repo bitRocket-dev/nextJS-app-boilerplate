@@ -15,7 +15,8 @@
     "cypress": "cypress open",
     "postbuild": "next-sitemap",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "create-component": "node create-component.js"
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.0",
@@ -27,6 +28,7 @@
     "@storybook/testing-library": "^0.0.13",
     "axios": "^1.3.4",
     "i18next": "^22.4.13",
+    "inquirer": "^8.0.0",
     "next": "13.2.4",
     "next-i18next": "^13.2.2",
     "next-seo": "^5.15.0",
