@@ -14,8 +14,8 @@
     "generate:release": "standard-version",
     "cypress": "cypress open",
     "postbuild": "next-sitemap",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006 -s ./public/locales",
+    "build-storybook": "build-storybook -s public",
     "create-component": "node create-component.js"
   },
   "dependencies": {

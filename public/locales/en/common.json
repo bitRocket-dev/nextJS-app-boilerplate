@@ -1,7 +1,9 @@
 {
   "title": "My website",
-  "home": "Home",
-  "about": "About",
-  "contact": "Contact",
-  "developers": "developers"
+  "home": "home",
+  "about": "about",
+  "contact": "contact",
+  "developers": "developers",
+  "default": "Insert your text",
+  "page": "This is a Page"
 }

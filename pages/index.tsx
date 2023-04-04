@@ -7,7 +7,7 @@ import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { i18n, useTranslation } from 'next-i18next';
+import { i18n } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextSeo } from 'next-seo';
 
@@ -30,8 +30,6 @@ export async function getStaticProps({ locale }: NextPageContext) {
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
-  const { t } = useTranslation('common');
-
   return (
     <>
       <Head>
@@ -70,8 +68,8 @@ export default function Home() {
           }}
         />
       </Head>
-      <Link style={{ marginRight: '20px' }} href={`/${t('developers')}`} locale={i18n?.language}>
-        {t('developers')}
+      <Link style={{ marginRight: '20px' }} href={`/${i18n?.t('developers')}`} locale={i18n?.language}>
+        {i18n?.t('developers')}
       </Link>
       <Link href="/about">About</Link>
       <main className={styles.main}>
