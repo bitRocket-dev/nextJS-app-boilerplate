@@ -10,6 +10,7 @@ const COMPONENT_TYPES = {
   'components-shared': 'Shared component',
   utils: 'Utility function',
   hooks: 'Hook function',
+  peges: 'Page component',
 };
 
 function createComponent() {
@@ -55,6 +56,7 @@ function createComponent() {
           ? 'common/utils'
           : 'common/hooks',
       );
+      const componentNameUpper = componentName.charAt(0).toUpperCase() + componentName.slice(1);
       const componentFilePath = path.join(dirPath, `${componentNameUpper}.tsx`);
 
       if (fs.existsSync(componentFilePath)) {
@@ -63,8 +65,6 @@ function createComponent() {
       }
 
       fs.mkdirSync(dirPath, { recursive: true });
-
-      const componentNameUpper = componentName.charAt(0).toUpperCase() + componentName.slice(1);
 
       let componentContent = '';
 
