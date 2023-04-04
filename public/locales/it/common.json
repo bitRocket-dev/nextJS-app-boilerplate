@@ -1,8 +1,9 @@
 {
   "title": "Il mio sito",
-  "home": "Home",
-  "about": "Informazioni",
-  "contact": "Contatti",
-  "developers": "Sviluppatori",
-  "default": "Inserisci il testo"
+  "home": "home",
+  "about": "informazioni",
+  "contact": "contatti",
+  "developers": "sviluppatori",
+  "default": "Inserisci il testo",
+  "page": "Questa è una pagina"
 }
