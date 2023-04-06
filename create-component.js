@@ -124,9 +124,11 @@ import { memo } from 'react';
 
 import styled from '@emotion/styled';
 
+// #region: STYLED
 const Styled${componentNameUpper}Container = styled.div\({
 /* Add your styles here */
 \});
+// #endregion
             
 interface Props {
 label?: string;
@@ -143,9 +145,11 @@ import { memo } from 'react';
 import styled from '@emotion/styled';
 import { i18n } from 'next-i18next';
 
+// #region: STYLED
 const Styled${componentNameUpper}Container = styled.div\({
 /* Add your styles here */
 \});
+// #endregion
                     
 interface Props {
 label?: string;
@@ -184,10 +188,12 @@ import styled from '@emotion/styled';
 import { NextPageContext } from 'next';
 import { i18n } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-        
+
+// #region: STYLED
 const StyledContainer = styled.div({
 /* Add your styles here */
 });
+// #endregion
 
         
 export async function getStaticProps({ locale }: NextPageContext) {
@@ -216,10 +222,12 @@ import styled from '@emotion/styled';
 import { NextPageContext } from 'next';
 import { i18n } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-                  
+
+// #region: STYLED
 const StyledContainer = styled.div({
   /* Add your styles here */
   });
+// #endregion
 
   export const getStaticPaths = () => ({
     paths: [
@@ -260,10 +268,12 @@ import styled from '@emotion/styled';
 import { GetServerSideProps } from 'next';
 import { i18n } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-          
+
+// #region: STYLED
 const StyledContainer = styled.div({
 /* Add your styles here */
 });
+// #endregion
           
 export const getServerSideProps: GetServerSideProps = async context => {
  const locale = context.locale || context.defaultLocale;
