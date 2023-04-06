@@ -6,11 +6,15 @@ import { NextPageContext } from 'next';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 import { i18n } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextSeo } from 'next-seo';
 
+import { UIButton } from '../common/components.ui/Button';
+import { UILoader } from '../common/components.ui/Loader';
+import { selectorAuth } from '../redux/auth/selectors';
+import { thunkAuth } from '../redux/auth/thunk';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import styles from '../styles/Home.module.css';
 
 export async function getStaticProps({ locale }: NextPageContext) {
@@ -30,6 +34,20 @@ export async function getStaticProps({ locale }: NextPageContext) {
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
+  const { isAuthenticated, isLoading } = useAppSelector(selectorAuth);
+  const dispatch = useAppDispatch();
+
+  const onClickLogin = () => {
+    dispatch(
+      thunkAuth({
+        isAuthenticated: true,
+        isLoading: false,
+      }),
+    );
+  };
+
+  if (isLoading) return <UILoader />;
+
   return (
     <>
       <Head>
@@ -68,10 +86,6 @@ export default function Home() {
           }}
         />
       </Head>
-      <Link style={{ marginRight: '20px' }} href={`/${i18n?.t('developers')}`} locale={i18n?.language}>
-        {i18n?.t('developers')}
-      </Link>
-      <Link href="/about">About</Link>
       <main className={styles.main}>
         <div className={styles.description}>
           <h1>
@@ -103,6 +117,7 @@ export default function Home() {
             <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
           </div>
         </div>
+        {!isAuthenticated && <UIButton label={i18n?.t('login')} onClick={() => onClickLogin()} />}
 
         <div className={styles.grid}>
           <a
