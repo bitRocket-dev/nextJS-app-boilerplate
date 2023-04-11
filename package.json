@@ -19,8 +19,6 @@
     "create-component": "node create-component.js"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.4.0",
-    "@docusaurus/preset-classic": "^2.4.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@reduxjs/toolkit": "^1.9.3",
@@ -34,6 +32,7 @@
     "next-seo": "^5.15.0",
     "next-sitemap": "^4.0.6",
     "react": "18.2.0",
+    "react-dark-mode-toggle": "^0.2.0",
     "react-dom": "18.2.0",
     "react-i18next": "^12.2.0",
     "react-redux": "^8.0.5",
