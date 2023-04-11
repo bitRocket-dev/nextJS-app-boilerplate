@@ -6,10 +6,13 @@ import { useEffect, useState } from 'react';
 
 import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
+import { Provider } from 'react-redux';
 
+import { Navbar } from '../common/components-shared/Navbar';
 import { SwitchTheme } from '../common/components-shared/SwitchTheme';
 import { ThemeProvider } from '../common/theme/Provider';
 import { utilityGetTheme } from '../common/utils/utilityGetTheme';
+import { store } from '../redux/createStore';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
@@ -20,10 +23,13 @@ const App = ({ Component, pageProps }: AppProps) => {
   }, []);
 
   return (
-    <ThemeProvider themeSelected={theme}>
-      <SwitchTheme theme={theme} setTheme={setTheme} />
-      <Component {...pageProps} />;
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider themeSelected={theme}>
+        <SwitchTheme theme={theme} setTheme={setTheme} />
+        <Navbar />
+        <Component {...pageProps} />;
+      </ThemeProvider>
+    </Provider>
   );
 };
 
