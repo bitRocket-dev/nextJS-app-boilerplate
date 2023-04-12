@@ -98,7 +98,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{' '}
+              By
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
@@ -109,6 +109,7 @@ export default function Home() {
               />
             </a>
           </div>
+          {!isAuthenticated && <UIButton label={i18n?.t('login')} onClick={() => onClickLogin()} />}
         </div>
 
         <div className={styles.center}>
@@ -117,7 +118,6 @@ export default function Home() {
             <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
           </div>
         </div>
-        {!isAuthenticated && <UIButton label={i18n?.t('login')} onClick={() => onClickLogin()} />}
 
         <div className={styles.grid}>
           <a
