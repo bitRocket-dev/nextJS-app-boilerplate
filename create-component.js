@@ -323,7 +323,7 @@ describe('${componentNameUpper}', () => {
 });
             
 `;
-        const componentFilePath = path.join('./_test_', `${componentName}.test.jsx`);
+        const componentFilePath = path.join('./_test_', `${componentName}.test.tsx`);
         fs.writeFileSync(componentFilePath, componentContent);
       }
       if (hasStory) {
