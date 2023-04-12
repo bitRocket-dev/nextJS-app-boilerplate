@@ -107,6 +107,7 @@
     "no-empty": "error",
     "no-useless-escape": "error",
     "no-var": "error",
+    "no-undef": "off",
     "prefer-const": "error",
     "prettier/prettier": [
       "off",

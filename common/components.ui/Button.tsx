@@ -47,7 +47,13 @@ interface Props {
 }
 
 export const UIButton = memo(({ disabled = false, onClick, label, onMouseEnter, onMouseLeave }: Props) => (
-  <StyledButton disabled={disabled} onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+  <StyledButton
+    id="login"
+    disabled={disabled}
+    onClick={onClick}
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
+  >
     {label}
   </StyledButton>
 ));
