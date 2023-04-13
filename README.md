@@ -1,5 +1,6 @@
-# Boilerplate and Starter for Next JS 13+, Emotion Js and TypeScript
+<!-- @format -->
 
+# Boilerplate and Starter for Next JS 13+, Emotion Js and TypeScript
 
 🚀 Boilerplate and Starter for Next.js, Emotion Js and TypeScript ⚡️ Made with developer experience first: Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, Jest, Testing Library, Cypress, Commitlint, Emotion Js.
 
@@ -20,11 +21,14 @@ Developer experience first:
 - 🚓 Lint git commit with Commitlint
 - 🦺 Unit Testing with Jest and React Testing Library
 - 🧪 E2E Testing with Cypress
-- 👷 Run tests on pull request with GitHub Actions
+- 👷 Run tests on pull request
 - 🎁 Automatic changelog generation with Standard Version
-- 🔍 Visual testing with Percy 
-- 🌈 Include a FREE minimalist theme
+- 🌈 Include a minimalist theme
 - 💯 Maximize lighthouse score
+- 🗺️ Sitemap.xml and robots.txt with next-sitemap
+- 🎉 Storybook for UI development
+- 💾 Create React component with a single script
+- 🐮 management of translation content, and components/hooks to translate your React component with i18next
 
 Built-in feature from Next.js:
 
@@ -39,6 +43,7 @@ Built-in feature from Next.js:
 - Minimal code
 - SEO-friendly
 - 🚀 Production-ready
+
 # Index
 
 - [Naming Convention](@docs/NAMING_CONVENTION.md)
@@ -51,6 +56,7 @@ Built-in feature from Next.js:
 ## Getting Started
 
 First, run the development server:
+
 ```
 yarn dev
 ```
@@ -84,7 +90,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 The development of the project follows a _functional oriented_ approach. All components are considered _dumb_, meaning they do not contain any logic, while the logic is handled within _custom hooks_.
 
-
 ## Components
 
 - A _shared_ component is developed by aggregating one or more _UI_ components and _custom hooks_.
@@ -116,7 +121,7 @@ yarn generate:release
 3. Click on `Edit in settings.json`
 4. Add this entry on opened file `settings.json` and save it
 
-1.Install the `Prettier`  extension.
+1.Install the `Prettier` extension.
 2.Go to `File -> Settings` and search for `theme`.
 3.Click on Edit in settings.json`
 4.Add this entry to the opened settings.json file and save it:
@@ -136,7 +141,7 @@ yarn generate:release
   },
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
-  
+
 ```
 
 ## Work flow
@@ -145,7 +150,6 @@ yarn generate:release
 - Installing a new library requires permission from the Team Lead.
 - Changing formatting rules requires permission from the Team Lead.
 - Updating a library requires permission from the Team Lead.
-
 
 # Naming conventions
 
@@ -157,3 +161,4 @@ To facilitate development, it is important that component and/or function names 
 - `yarn run postinstall` activates husky after installing _node_modules_ _(automatic)_
 - `yarn run format` code formatting according to defined rules
 - `yarn run start` starting the application in staging environment
+- `yarn lint´ code verify by eslint
