@@ -311,14 +311,16 @@ export default () => (
 /** @format */
 
 import React from 'react';
-import { render } from '@testing-library/react';
+
+import { render, screen } from '@testing-library/react';
+
+import '@testing-library/jest-dom';
 import { ${componentNameUpper} } from '../common/${componentTypeKey}/${componentNameUpper}';
         
 describe('${componentNameUpper}', () => {
   test('renders without errors', () => {
-  const { getByText } = render(<${componentNameUpper} label="Click Me" />);
-  const componentElement = getByText('Click Me');
-  expect(componentElement).toBeInTheDocument();
+  render(<${componentNameUpper} label="Click Me" />);
+  expect(screen.getByText('Click Me')).toBeInTheDocument();
 });
 });
             
